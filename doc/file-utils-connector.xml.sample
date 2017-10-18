@@ -1,0 +1,6 @@
+<!-- BEGIN_INCLUDE(file-utils:greet) -->
+    <file-utils:greet config-ref="" friend="#[map-payload:friend]" />
+<!-- END_INCLUDE(file-utils:greet) -->
+<!-- BEGIN_INCLUDE(file-utils:add-entity) -->
+    <file-utils:add-entity config-ref="" key="id1"/>
+<!-- END_INCLUDE(file-utils:add-entity) -->

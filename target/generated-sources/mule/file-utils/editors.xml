@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<namespace xmlns="http://www.mulesoft.org/schema/mule/tooling.attributes" xmlns:mule="http://www.mulesoft.org/schema/mule/core" url="http://www.mulesoft.org/schema/mule/file-utils" prefix="file-utils">
+  <global-cloud-connector versions="[3.5.0,8.0.0]" caption="FileUtils" description="" icon="" localId="parentConfig" image="" abstract="true" extends="http://www.mulesoft.org/schema/mule/file-utils/abstractFile-utilsConnectorGeneric"></global-cloud-connector>
+  <global-cloud-connector versions="[3.5.0,8.0.0]" caption="FileUtils" description="Global FileUtils configuration information." icon="icons/theme.classic/file-utils-connector-small.png" localId="config" image="icons/theme.classic/file-utils-connector-large.png" abstract="false" extends="http://www.mulesoft.org/schema/mule/file-utils/parentConfig" connectivityTesting="off" metaData="dynamic" metaDataKeyDisplay="DISPLAY_NAME" supportsUserDefinedMetaData="false">
+    <attribute-category caption="General" description="File-utils configuration properties.">
+      <group id="file-utilsGenericProperties" caption="Basic Settings">
+        <name name="name" caption="Name" description="Give a name to this configuration so it can be later referenced by config-ref." required="true"></name>
+      </group>
+      <group id="general" caption="General">
+        <useMetaData name="useMetaData" caption="useMetaData"></useMetaData>
+      </group>
+    </attribute-category>
+  </global-cloud-connector>
+  <cloud-connector caption="Abstractfile-utilsconnectorgeneric" description="Interact with File-utils." icon="icons/theme.classic/file-utils-connector-small.png" localId="abstractFile-utilsConnectorGeneric" image="icons/theme.classic/file-utils-connector-large.png" abstract="true">
+    <attribute-category caption="General" description="General.">
+      <group id="abstractFile-utilsConnectorGeneric" caption="Basic Settings"></group>
+    </attribute-category>
+  </cloud-connector>
+  <cloud-connector versions="[3.5.0,8.0.0]" aliasId="org.mule.tooling.ui.modules.core.pattern.file-utils" caption="FileUtils" description="" icon="icons/theme.classic/file-utils-connector-small.png" localId="file-utils-connector" image="icons/theme.classic/file-utils-connector-large.png" extends="http://www.mulesoft.org/schema/mule/file-utils/abstractFile-utilsConnectorGeneric">
+    <attribute-category caption="General" description="General.">
+      <group id="file-utilsConnectorGeneric" caption="Basic Settings">
+        <modeSwitch alwaysCombo="true" name="File-utils operations to execute" caption="Operation" description="Operation.">
+          <no-operation abstractElement="http://www.mulesoft.org/schema/mule/file-utils/abstractFile-utilsConnectorGeneric" versions="[3.5.0,8.0.0]" connector-name="processor"></no-operation>
+          <mode modeId="http://www.mulesoft.org/schema/mule/file-utils/check-if-files-exists" modeLabel="Check if files exists"></mode>
+          <mode modeId="http://www.mulesoft.org/schema/mule/file-utils/copy-files-directly" modeLabel="Copy files directly"></mode>
+        </modeSwitch>
+      </group>
+    </attribute-category>
+  </cloud-connector>
+  <cloud-connector returnType="java.util.List&lt;java.lang.String&gt;" categories="DataSenseResolver" caption="Check If Files Exists" icon="icons/theme.classic/file-utils-connector-small.png" localId="check-if-files-exists" image="icons/theme.classic/file-utils-connector-large.png" abstract="true" extends="http://www.mulesoft.org/schema/mule/file-utils/abstractFile-utilsConnectorGeneric" metaData="static">
+    <attribute-category caption="General" description="General.">
+      <group id="general" caption="General">
+        <string name="directoryPath" caption="Directory Path" description="" required="true" javaType="java.lang.String"></string>
+        <string name="pattern" caption="Pattern" description="" required="true" javaType="java.lang.String"></string>
+      </group>
+    </attribute-category>
+  </cloud-connector>
+  <cloud-connector returnType="void" categories="DataSenseResolver" caption="Copy Files Directly" icon="icons/theme.classic/file-utils-connector-small.png" localId="copy-files-directly" image="icons/theme.classic/file-utils-connector-large.png" abstract="true" extends="http://www.mulesoft.org/schema/mule/file-utils/abstractFile-utilsConnectorGeneric" metaData="static">
+    <attribute-category caption="General" description="General.">
+      <group id="general" caption="General">
+        <string name="sourceDirectoryPath" caption="Source Directory Path" description="" required="true" javaType="java.lang.String"></string>
+        <string name="targetDirectoryPath" caption="Target Directory Path" description="" required="true" javaType="java.lang.String"></string>
+      </group>
+    </attribute-category>
+  </cloud-connector>
+</namespace>
